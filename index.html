@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name= "viewport" content="width=device-width, Initial-scale=1.0">
+  <title>Black tabs</title>
+  <style>
+      body {
+          font-family: Arial, Sans-Serif;
+          background-color: #f2f2f2;
+      }
+      
+      .tab { 
+          display: flex;
+          justify-content: center;
+      }
+      
+      .tab {
+          padding: 10px 20px;
+          margin: 10px;
+          background-color: #ffd700; /* Black color */
+          border: 2px solid #ffd700;
+          border-radius: 10px;
+          cursor: pointer;
+          transitiom: background-color 0.3s, color 0.3s;
+      }
+      
+      .tab:hover {
+          background-color: #ff69b4; /*white color on hover*/
+          color: black;
+      }
+      
+      .content { 
+          text-align: center;
+          padding: 20px;
+      }
+  </style>
+  </head>
+  <body>
+      <div class="tabs">
+          <div class="tab" onclick="showtab('home')" >Home</div>
+          <div class="tab" onclick="showtab('about')" >About</div>
+          <div class="tab" onclick="showtab('Education')" >Education</div>
+      </div>
+      <div class="content" id="homecontent">
+          <h2> Welcome to the homepage</h2>
+          <p>This is the home page content.</p>
+      </div>
+      <div class="content" id="aboutcontent" style=" display: none:">
+          <h2>About Myself</h2>
+          <p>My name is Maria Rhine T. Arcilla, currently living at Putatan,Muntinlupa City.Born on Sept 6, 2003 and I'm 20 years old. I'm working at jollibee South Luzon Expresway.</p>
+      </div>
+      <div class="content" id="educationalcontent" style="display: none;">
+          <h2>Education</h2>
+          <p>I am second year college taking Bachelor of Science in Computer Science at Pamantasan ng Lungsod ng Muntinlupa</p>
+      </div>
+      
+      <script>
+          function showtab(tabName) {
+              const tabs= ['home', 'about', 'Education'];
+              tabs. forEach(tab => {
+                  const content = document.getElementById('${tab} Content');
+                  const tableElement = document.getElementById(tab);
+                  if (tab === tabName) {
+                      content.style.display ='block';
+                      tabElement.style.backgroundColor = 'ffd700';
+                      tabElement.style.color = 'black';
+                  } else {
+                      content.style.display ='none';
+                      tabElement.style.backgroundColor = 'ffd700';
+                      tabElement.style.color = 'black';
+                  }
+              });
+          }
+      </script>
+      </body>
+  
